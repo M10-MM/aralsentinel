@@ -5,7 +5,9 @@
 //               e.g. offline or when only the frontend folder is deployed)
 const LIVE = "api";
 const STATIC = "api";
-let mode = "live";
+// On known static hosts there is no backend, so skip the live probe
+// (avoids a needless 404 in the browser console).
+let mode = /\.(netlify\.app|github\.io)$/.test(location.hostname) ? "static" : "live";
 
 let lang = "en";
 try { lang = localStorage.getItem("lang") || "en"; } catch {}
@@ -51,6 +53,7 @@ async function getData(livePath, staticPath) {
       document.getElementById("offline-banner").hidden = false;
     }
   }
+  document.getElementById("offline-banner").hidden = false;
   return fetchJSON(`${STATIC}/${staticPath}`);
 }
 
