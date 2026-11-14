@@ -1,0 +1,34 @@
+[
+  {
+    "id": "syrdarya-1",
+    "name": "Syrdarya demo field",
+    "region": "Syrdarya",
+    "lat": 40.65,
+    "lon": 68.55,
+    "crop_now": "cotton-wheat"
+  },
+  {
+    "id": "jizzakh-1",
+    "name": "Jizzakh demo field",
+    "region": "Jizzakh",
+    "lat": 40.45,
+    "lon": 67.95,
+    "crop_now": "cotton-wheat"
+  },
+  {
+    "id": "karakalpak-1",
+    "name": "Karakalpakstan demo field",
+    "region": "Karakalpakstan",
+    "lat": 42.35,
+    "lon": 59.85,
+    "crop_now": "cotton-wheat"
+  },
+  {
+    "id": "tashkent-1",
+    "name": "Tashkent region demo field",
+    "region": "Tashkent",
+    "lat": 41.05,
+    "lon": 69.35,
+    "crop_now": "cotton-wheat"
+  }
+]

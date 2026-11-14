@@ -1,0 +1,29 @@
+1
+00:00:00,000 --> 00:00:04,000
+Jizzakh, Uzbekistan: 342 mm of rain a year,
+and almost none in summer.
+
+2
+00:00:04,000 --> 00:00:09,000
+AralSentinel turns ten years of NASA POWER
+and MODIS data into a field risk index.
+
+3
+00:00:09,000 --> 00:00:15,000
+It ranks three-year crop rotations
+by FAO rules and by the farmer's priorities.
+
+4
+00:00:15,000 --> 00:00:21,000
+A 20% water cut costs this rotation 20% of its yield,
+about $214 per hectare (estimate).
+
+5
+00:00:21,000 --> 00:00:25,000
+It warns about the alfalfa trap,
+in English, Uzbek and Russian.
+
+6
+00:00:25,000 --> 00:00:30,000
+Free, open and works offline.
+Try it at {{NETLIFY_URL_SHORT}}

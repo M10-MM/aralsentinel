@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "AralSentinel API",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["backend.app.main:app", "--reload", "--reload-dir", "backend", "--port", "8000"],
+      "cwd": "${workspaceFolder}",
+      "jinja": true
+    }
+  ]
+}

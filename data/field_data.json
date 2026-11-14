@@ -1,0 +1,1005 @@
+{
+ "generated_utc": "2026-11-14T12:43:16+00:00",
+ "years": [
+  2015,
+  2025
+ ],
+ "fields": {
+  "jizzakh-1": {
+   "sample": false,
+   "series": {
+    "ndvi": [
+     {
+      "year": 2015,
+      "value": 0.4465
+     },
+     {
+      "year": 2016,
+      "value": 0.3249
+     },
+     {
+      "year": 2017,
+      "value": 0.5021
+     },
+     {
+      "year": 2018,
+      "value": 0.3503
+     },
+     {
+      "year": 2019,
+      "value": 0.3859
+     },
+     {
+      "year": 2020,
+      "value": 0.3162
+     },
+     {
+      "year": 2021,
+      "value": 0.4439
+     },
+     {
+      "year": 2022,
+      "value": 0.4198
+     },
+     {
+      "year": 2023,
+      "value": 0.3213
+     },
+     {
+      "year": 2024,
+      "value": 0.325
+     },
+     {
+      "year": 2025,
+      "value": 0.4535
+     }
+    ],
+    "lst": [
+     {
+      "year": 2015,
+      "value": 40.96
+     },
+     {
+      "year": 2016,
+      "value": 41.12
+     },
+     {
+      "year": 2017,
+      "value": 38.49
+     },
+     {
+      "year": 2018,
+      "value": 40.7
+     },
+     {
+      "year": 2019,
+      "value": 39.88
+     },
+     {
+      "year": 2020,
+      "value": 40.71
+     },
+     {
+      "year": 2021,
+      "value": 40.29
+     },
+     {
+      "year": 2022,
+      "value": 39.19
+     },
+     {
+      "year": 2023,
+      "value": 41.48
+     },
+     {
+      "year": 2024,
+      "value": 38.4
+     },
+     {
+      "year": 2025,
+      "value": 38.05
+     }
+    ],
+    "soil": [
+     {
+      "year": 2015,
+      "value": 0.56
+     },
+     {
+      "year": 2016,
+      "value": 0.53
+     },
+     {
+      "year": 2017,
+      "value": 0.55
+     },
+     {
+      "year": 2018,
+      "value": 0.51
+     },
+     {
+      "year": 2019,
+      "value": 0.54
+     },
+     {
+      "year": 2020,
+      "value": 0.53
+     },
+     {
+      "year": 2021,
+      "value": 0.58
+     },
+     {
+      "year": 2022,
+      "value": 0.55
+     },
+     {
+      "year": 2023,
+      "value": 0.55
+     },
+     {
+      "year": 2024,
+      "value": 0.53
+     },
+     {
+      "year": 2025,
+      "value": 0.54
+     }
+    ],
+    "rain": [
+     {
+      "year": 2015,
+      "value": 365.0
+     },
+     {
+      "year": 2016,
+      "value": 368.6
+     },
+     {
+      "year": 2017,
+      "value": 335.8
+     },
+     {
+      "year": 2018,
+      "value": 310.2
+     },
+     {
+      "year": 2019,
+      "value": 346.8
+     },
+     {
+      "year": 2020,
+      "value": 584.0
+     },
+     {
+      "year": 2021,
+      "value": 262.8
+     },
+     {
+      "year": 2022,
+      "value": 511.0
+     },
+     {
+      "year": 2023,
+      "value": 255.5
+     },
+     {
+      "year": 2024,
+      "value": 365.0
+     },
+     {
+      "year": 2025,
+      "value": 313.9
+     }
+    ],
+    "tmax": [
+     {
+      "year": 2015,
+      "value": 45.13
+     },
+     {
+      "year": 2016,
+      "value": 43.47
+     },
+     {
+      "year": 2017,
+      "value": 44.67
+     },
+     {
+      "year": 2018,
+      "value": 43.34
+     },
+     {
+      "year": 2019,
+      "value": 43.33
+     },
+     {
+      "year": 2020,
+      "value": 42.63
+     },
+     {
+      "year": 2021,
+      "value": 44.53
+     },
+     {
+      "year": 2022,
+      "value": 44.38
+     },
+     {
+      "year": 2023,
+      "value": 43.94
+     },
+     {
+      "year": 2024,
+      "value": 44.52
+     },
+     {
+      "year": 2025,
+      "value": 44.64
+     }
+    ]
+   },
+   "soil_props": {
+    "ph": 7.67,
+    "clay_pct": 30.33,
+    "sand_pct": 22.43,
+    "soc_g_kg": 11.9
+   },
+   "sources": {
+    "ndvi": "MODIS Terra MOD13Q1 v061 NDVI 250 m, Jun-Aug mean (ORNL DAAC)",
+    "lst": "MODIS Terra MOD11A2 v061 LST_Day 1 km, Jun-Aug mean (ORNL DAAC)",
+    "soil": "NASA POWER GWETROOT root-zone soil wetness (MERRA-2)",
+    "rain": "NASA POWER PRECTOTCORR precipitation (MERRA-2)",
+    "tmax": "NASA POWER T2M_MAX (monthly peak daily max), Jun-Aug mean (MERRA-2)",
+    "soil_props": "ISRIC SoilGrids v2.0, 0-30 cm mean"
+   }
+  },
+  "syrdarya-1": {
+   "sample": false,
+   "series": {
+    "ndvi": [
+     {
+      "year": 2015,
+      "value": 0.4331
+     },
+     {
+      "year": 2016,
+      "value": 0.426
+     },
+     {
+      "year": 2017,
+      "value": 0.5739
+     },
+     {
+      "year": 2018,
+      "value": 0.431
+     },
+     {
+      "year": 2019,
+      "value": 0.5884
+     },
+     {
+      "year": 2020,
+      "value": 0.4894
+     },
+     {
+      "year": 2021,
+      "value": 0.4587
+     },
+     {
+      "year": 2022,
+      "value": 0.5501
+     },
+     {
+      "year": 2023,
+      "value": 0.6019
+     },
+     {
+      "year": 2024,
+      "value": 0.5258
+     },
+     {
+      "year": 2025,
+      "value": 0.6508
+     }
+    ],
+    "lst": [
+     {
+      "year": 2015,
+      "value": 39.1
+     },
+     {
+      "year": 2016,
+      "value": 39.48
+     },
+     {
+      "year": 2017,
+      "value": 37.84
+     },
+     {
+      "year": 2018,
+      "value": 39.7
+     },
+     {
+      "year": 2019,
+      "value": 38.27
+     },
+     {
+      "year": 2020,
+      "value": 38.91
+     },
+     {
+      "year": 2021,
+      "value": 38.23
+     },
+     {
+      "year": 2022,
+      "value": 38.04
+     },
+     {
+      "year": 2023,
+      "value": 35.85
+     },
+     {
+      "year": 2024,
+      "value": 36.4
+     },
+     {
+      "year": 2025,
+      "value": 33.94
+     }
+    ],
+    "soil": [
+     {
+      "year": 2015,
+      "value": 0.53
+     },
+     {
+      "year": 2016,
+      "value": 0.51
+     },
+     {
+      "year": 2017,
+      "value": 0.52
+     },
+     {
+      "year": 2018,
+      "value": 0.49
+     },
+     {
+      "year": 2019,
+      "value": 0.51
+     },
+     {
+      "year": 2020,
+      "value": 0.51
+     },
+     {
+      "year": 2021,
+      "value": 0.54
+     },
+     {
+      "year": 2022,
+      "value": 0.52
+     },
+     {
+      "year": 2023,
+      "value": 0.51
+     },
+     {
+      "year": 2024,
+      "value": 0.5
+     },
+     {
+      "year": 2025,
+      "value": 0.51
+     }
+    ],
+    "rain": [
+     {
+      "year": 2015,
+      "value": 346.8
+     },
+     {
+      "year": 2016,
+      "value": 357.7
+     },
+     {
+      "year": 2017,
+      "value": 328.5
+     },
+     {
+      "year": 2018,
+      "value": 299.3
+     },
+     {
+      "year": 2019,
+      "value": 335.8
+     },
+     {
+      "year": 2020,
+      "value": 565.8
+     },
+     {
+      "year": 2021,
+      "value": 240.9
+     },
+     {
+      "year": 2022,
+      "value": 489.1
+     },
+     {
+      "year": 2023,
+      "value": 240.9
+     },
+     {
+      "year": 2024,
+      "value": 357.7
+     },
+     {
+      "year": 2025,
+      "value": 281.1
+     }
+    ],
+    "tmax": [
+     {
+      "year": 2015,
+      "value": 45.28
+     },
+     {
+      "year": 2016,
+      "value": 44.0
+     },
+     {
+      "year": 2017,
+      "value": 44.73
+     },
+     {
+      "year": 2018,
+      "value": 43.37
+     },
+     {
+      "year": 2019,
+      "value": 43.63
+     },
+     {
+      "year": 2020,
+      "value": 42.74
+     },
+     {
+      "year": 2021,
+      "value": 44.58
+     },
+     {
+      "year": 2022,
+      "value": 44.43
+     },
+     {
+      "year": 2023,
+      "value": 44.32
+     },
+     {
+      "year": 2024,
+      "value": 44.6
+     },
+     {
+      "year": 2025,
+      "value": 44.87
+     }
+    ]
+   },
+   "soil_props": {
+    "ph": 7.7,
+    "clay_pct": 30.9,
+    "sand_pct": 24.13,
+    "soc_g_kg": 13.8
+   },
+   "sources": {
+    "ndvi": "MODIS Terra MOD13Q1 v061 NDVI 250 m, Jun-Aug mean (ORNL DAAC)",
+    "lst": "MODIS Terra MOD11A2 v061 LST_Day 1 km, Jun-Aug mean (ORNL DAAC)",
+    "soil": "NASA POWER GWETROOT root-zone soil wetness (MERRA-2)",
+    "rain": "NASA POWER PRECTOTCORR precipitation (MERRA-2)",
+    "tmax": "NASA POWER T2M_MAX (monthly peak daily max), Jun-Aug mean (MERRA-2)",
+    "soil_props": "ISRIC SoilGrids v2.0, 0-30 cm mean"
+   }
+  },
+  "karakalpak-1": {
+   "sample": false,
+   "series": {
+    "ndvi": [
+     {
+      "year": 2015,
+      "value": 0.1355
+     },
+     {
+      "year": 2016,
+      "value": 0.1211
+     },
+     {
+      "year": 2017,
+      "value": 0.1141
+     },
+     {
+      "year": 2018,
+      "value": 0.1201
+     },
+     {
+      "year": 2019,
+      "value": 0.1226
+     },
+     {
+      "year": 2020,
+      "value": 0.1159
+     },
+     {
+      "year": 2021,
+      "value": 0.1104
+     },
+     {
+      "year": 2022,
+      "value": 0.133
+     },
+     {
+      "year": 2023,
+      "value": 0.111
+     },
+     {
+      "year": 2024,
+      "value": 0.1192
+     },
+     {
+      "year": 2025,
+      "value": 0.1152
+     }
+    ],
+    "lst": [
+     {
+      "year": 2015,
+      "value": 44.87
+     },
+     {
+      "year": 2016,
+      "value": 45.06
+     },
+     {
+      "year": 2017,
+      "value": 46.1
+     },
+     {
+      "year": 2018,
+      "value": 45.15
+     },
+     {
+      "year": 2019,
+      "value": 44.11
+     },
+     {
+      "year": 2020,
+      "value": 45.04
+     },
+     {
+      "year": 2021,
+      "value": 46.1
+     },
+     {
+      "year": 2022,
+      "value": 44.08
+     },
+     {
+      "year": 2023,
+      "value": 44.94
+     },
+     {
+      "year": 2024,
+      "value": 42.89
+     },
+     {
+      "year": 2025,
+      "value": 41.6
+     }
+    ],
+    "soil": [
+     {
+      "year": 2015,
+      "value": 0.4
+     },
+     {
+      "year": 2016,
+      "value": 0.41
+     },
+     {
+      "year": 2017,
+      "value": 0.4
+     },
+     {
+      "year": 2018,
+      "value": 0.4
+     },
+     {
+      "year": 2019,
+      "value": 0.39
+     },
+     {
+      "year": 2020,
+      "value": 0.38
+     },
+     {
+      "year": 2021,
+      "value": 0.39
+     },
+     {
+      "year": 2022,
+      "value": 0.45
+     },
+     {
+      "year": 2023,
+      "value": 0.39
+     },
+     {
+      "year": 2024,
+      "value": 0.39
+     },
+     {
+      "year": 2025,
+      "value": 0.43
+     }
+    ],
+    "rain": [
+     {
+      "year": 2015,
+      "value": 131.4
+     },
+     {
+      "year": 2016,
+      "value": 175.2
+     },
+     {
+      "year": 2017,
+      "value": 105.8
+     },
+     {
+      "year": 2018,
+      "value": 102.2
+     },
+     {
+      "year": 2019,
+      "value": 87.6
+     },
+     {
+      "year": 2020,
+      "value": 73.0
+     },
+     {
+      "year": 2021,
+      "value": 178.8
+     },
+     {
+      "year": 2022,
+      "value": 397.9
+     },
+     {
+      "year": 2023,
+      "value": 76.6
+     },
+     {
+      "year": 2024,
+      "value": 127.7
+     },
+     {
+      "year": 2025,
+      "value": 266.4
+     }
+    ],
+    "tmax": [
+     {
+      "year": 2015,
+      "value": 44.68
+     },
+     {
+      "year": 2016,
+      "value": 40.95
+     },
+     {
+      "year": 2017,
+      "value": 42.49
+     },
+     {
+      "year": 2018,
+      "value": 44.33
+     },
+     {
+      "year": 2019,
+      "value": 43.86
+     },
+     {
+      "year": 2020,
+      "value": 42.87
+     },
+     {
+      "year": 2021,
+      "value": 44.43
+     },
+     {
+      "year": 2022,
+      "value": 43.51
+     },
+     {
+      "year": 2023,
+      "value": 42.74
+     },
+     {
+      "year": 2024,
+      "value": 42.35
+     },
+     {
+      "year": 2025,
+      "value": 42.74
+     }
+    ]
+   },
+   "soil_props": {
+    "ph": 7.6,
+    "clay_pct": 34.03,
+    "sand_pct": 22.73,
+    "soc_g_kg": 9.87
+   },
+   "sources": {
+    "ndvi": "MODIS Terra MOD13Q1 v061 NDVI 250 m, Jun-Aug mean (ORNL DAAC)",
+    "lst": "MODIS Terra MOD11A2 v061 LST_Day 1 km, Jun-Aug mean (ORNL DAAC)",
+    "soil": "NASA POWER GWETROOT root-zone soil wetness (MERRA-2)",
+    "rain": "NASA POWER PRECTOTCORR precipitation (MERRA-2)",
+    "tmax": "NASA POWER T2M_MAX (monthly peak daily max), Jun-Aug mean (MERRA-2)",
+    "soil_props": "ISRIC SoilGrids v2.0, 0-30 cm mean"
+   }
+  },
+  "tashkent-1": {
+   "sample": false,
+   "series": {
+    "ndvi": [
+     {
+      "year": 2015,
+      "value": 0.4222
+     },
+     {
+      "year": 2016,
+      "value": 0.4344
+     },
+     {
+      "year": 2017,
+      "value": 0.4334
+     },
+     {
+      "year": 2018,
+      "value": 0.4088
+     },
+     {
+      "year": 2019,
+      "value": 0.4144
+     },
+     {
+      "year": 2020,
+      "value": 0.4591
+     },
+     {
+      "year": 2021,
+      "value": 0.4451
+     },
+     {
+      "year": 2022,
+      "value": 0.4046
+     },
+     {
+      "year": 2023,
+      "value": 0.3978
+     },
+     {
+      "year": 2024,
+      "value": 0.4289
+     },
+     {
+      "year": 2025,
+      "value": 0.3936
+     }
+    ],
+    "lst": [
+     {
+      "year": 2015,
+      "value": 38.51
+     },
+     {
+      "year": 2016,
+      "value": 38.36
+     },
+     {
+      "year": 2017,
+      "value": 38.06
+     },
+     {
+      "year": 2018,
+      "value": 38.6
+     },
+     {
+      "year": 2019,
+      "value": 38.99
+     },
+     {
+      "year": 2020,
+      "value": 38.85
+     },
+     {
+      "year": 2021,
+      "value": 40.56
+     },
+     {
+      "year": 2022,
+      "value": 40.07
+     },
+     {
+      "year": 2023,
+      "value": 38.42
+     },
+     {
+      "year": 2024,
+      "value": 37.14
+     },
+     {
+      "year": 2025,
+      "value": 36.96
+     }
+    ],
+    "soil": [
+     {
+      "year": 2015,
+      "value": 0.56
+     },
+     {
+      "year": 2016,
+      "value": 0.54
+     },
+     {
+      "year": 2017,
+      "value": 0.56
+     },
+     {
+      "year": 2018,
+      "value": 0.52
+     },
+     {
+      "year": 2019,
+      "value": 0.54
+     },
+     {
+      "year": 2020,
+      "value": 0.53
+     },
+     {
+      "year": 2021,
+      "value": 0.59
+     },
+     {
+      "year": 2022,
+      "value": 0.56
+     },
+     {
+      "year": 2023,
+      "value": 0.57
+     },
+     {
+      "year": 2024,
+      "value": 0.55
+     },
+     {
+      "year": 2025,
+      "value": 0.55
+     }
+    ],
+    "rain": [
+     {
+      "year": 2015,
+      "value": 394.2
+     },
+     {
+      "year": 2016,
+      "value": 383.2
+     },
+     {
+      "year": 2017,
+      "value": 350.4
+     },
+     {
+      "year": 2018,
+      "value": 321.2
+     },
+     {
+      "year": 2019,
+      "value": 335.8
+     },
+     {
+      "year": 2020,
+      "value": 507.3
+     },
+     {
+      "year": 2021,
+      "value": 321.2
+     },
+     {
+      "year": 2022,
+      "value": 540.2
+     },
+     {
+      "year": 2023,
+      "value": 302.9
+     },
+     {
+      "year": 2024,
+      "value": 379.6
+     },
+     {
+      "year": 2025,
+      "value": 357.7
+     }
+    ],
+    "tmax": [
+     {
+      "year": 2015,
+      "value": 43.34
+     },
+     {
+      "year": 2016,
+      "value": 41.91
+     },
+     {
+      "year": 2017,
+      "value": 42.72
+     },
+     {
+      "year": 2018,
+      "value": 41.16
+     },
+     {
+      "year": 2019,
+      "value": 41.5
+     },
+     {
+      "year": 2020,
+      "value": 40.87
+     },
+     {
+      "year": 2021,
+      "value": 42.28
+     },
+     {
+      "year": 2022,
+      "value": 42.57
+     },
+     {
+      "year": 2023,
+      "value": 42.27
+     },
+     {
+      "year": 2024,
+      "value": 42.53
+     },
+     {
+      "year": 2025,
+      "value": 42.73
+     }
+    ]
+   },
+   "soil_props": {
+    "ph": 7.5,
+    "clay_pct": 33.33,
+    "sand_pct": 21.1,
+    "soc_g_kg": 12.7
+   },
+   "sources": {
+    "ndvi": "MODIS Terra MOD13Q1 v061 NDVI 250 m, Jun-Aug mean (ORNL DAAC)",
+    "lst": "MODIS Terra MOD11A2 v061 LST_Day 1 km, Jun-Aug mean (ORNL DAAC)",
+    "soil": "NASA POWER GWETROOT root-zone soil wetness (MERRA-2)",
+    "rain": "NASA POWER PRECTOTCORR precipitation (MERRA-2)",
+    "tmax": "NASA POWER T2M_MAX (monthly peak daily max), Jun-Aug mean (MERRA-2)",
+    "soil_props": "ISRIC SoilGrids v2.0, 0-30 cm mean"
+   }
+  }
+ }
+}

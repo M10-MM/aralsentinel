@@ -1,0 +1,67 @@
+{
+  "_notes": {
+    "water_need_mm": "Seasonal crop water need (ETc), midpoint of the range in FAO Irrigation Water Management Training Manual 3 / FAO-33 Table 1, consistent with FAO-56 Kc-based ETc for Central Asia.",
+    "ky": "Seasonal yield response factor, FAO Irrigation & Drainage Paper 33 (Doorenbos & Kassam 1979), Table 2 / FAO-66.",
+    "salt_threshold_ece": "Soil salinity (ECe, dS/m) at which yield starts to fall; salt_slope_pct = % yield loss per extra dS/m. FAO Irrigation & Drainage Paper 29 Rev.1 (Ayers & Westcot 1985), Table 4 (after Maas & Hoffman 1977).",
+    "ph_range": "Suitable soil pH, FAO ECOCROP.",
+    "yield_t_ha": "ESTIMATE: typical irrigated yield in Uzbekistan (FAOSTAT order of magnitude). Not field-specific.",
+    "price_usd_t": "ESTIMATE: rough farm-gate / export price in USD per tonne. Not official, for ranking only.",
+    "soil_benefit": "Rule-of-thumb 0-100 soil-health effect (legume N fixation, root depth, residue cover). Team assumption - verify with an agronomist."
+  },
+  "crops": {
+    "cotton": {
+      "name": {"en": "Cotton", "uz": "Paxta", "ru": "Хлопок"},
+      "water_need_mm": 900, "ky": 0.85,
+      "salt_threshold_ece": 7.7, "salt_slope_pct": 5.2,
+      "ph_range": [5.5, 8.5],
+      "yield_t_ha": 3.0, "price_usd_t": 600, "estimate": true,
+      "is_legume": false, "soil_benefit": 25,
+      "source": "FAO-33 (water, Ky); FAO-29 Table 4 (salt); yield/price = estimate"
+    },
+    "winter_wheat": {
+      "name": {"en": "Winter wheat", "uz": "Kuzgi bug'doy", "ru": "Озимая пшеница"},
+      "water_need_mm": 500, "ky": 1.0,
+      "salt_threshold_ece": 6.0, "salt_slope_pct": 7.1,
+      "ph_range": [6.0, 8.5],
+      "yield_t_ha": 5.0, "price_usd_t": 250, "estimate": true,
+      "is_legume": false, "soil_benefit": 50,
+      "source": "FAO-33 (water, Ky); FAO-29 Table 4 (salt); yield/price = estimate"
+    },
+    "alfalfa": {
+      "name": {"en": "Alfalfa", "uz": "Beda", "ru": "Люцерна"},
+      "water_need_mm": 1100, "ky": 1.1,
+      "salt_threshold_ece": 2.0, "salt_slope_pct": 7.3,
+      "ph_range": [6.5, 8.0],
+      "yield_t_ha": 12.0, "price_usd_t": 150, "estimate": true,
+      "is_legume": true, "soil_benefit": 95,
+      "source": "FAO-33 (water, Ky); FAO-29 Table 4 (salt); yield/price = estimate"
+    },
+    "maize": {
+      "name": {"en": "Maize", "uz": "Makkajo'xori", "ru": "Кукуруза"},
+      "water_need_mm": 650, "ky": 1.25,
+      "salt_threshold_ece": 1.7, "salt_slope_pct": 12.0,
+      "ph_range": [5.5, 7.5],
+      "yield_t_ha": 7.0, "price_usd_t": 230, "estimate": true,
+      "is_legume": false, "soil_benefit": 35,
+      "source": "FAO-33 (water, Ky); FAO-29 Table 4 (salt); yield/price = estimate"
+    },
+    "sorghum": {
+      "name": {"en": "Sorghum", "uz": "Oq jo'xori", "ru": "Сорго"},
+      "water_need_mm": 500, "ky": 0.9,
+      "salt_threshold_ece": 6.8, "salt_slope_pct": 16.0,
+      "ph_range": [5.5, 8.5],
+      "yield_t_ha": 4.0, "price_usd_t": 200, "estimate": true,
+      "is_legume": false, "soil_benefit": 55,
+      "source": "FAO-33 (water, Ky); FAO-29 Table 4 (salt); yield/price = estimate"
+    },
+    "mung_bean": {
+      "name": {"en": "Mung bean", "uz": "Mosh", "ru": "Маш"},
+      "water_need_mm": 350, "ky": 1.15,
+      "salt_threshold_ece": 1.8, "salt_slope_pct": 20.7,
+      "ph_range": [6.0, 7.5],
+      "yield_t_ha": 1.2, "price_usd_t": 900, "estimate": true,
+      "is_legume": true, "soil_benefit": 80,
+      "source": "FAO-33 dry beans (water, Ky); FAO-29 Table 4 (salt); yield/price = estimate"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+.playwright-mcp/
+
+# Raw API cache: re-created by backend/fetch_data.py.
+# The app itself only needs data/field_data.json (committed).
+# Keep the Jizzakh raw responses as a small sample, so
+# "fetch_data.py --offline" works for one field right after cloning.
+data/cache/*
+!data/cache/raw/
+data/cache/raw/*
+!data/cache/raw/*jizzakh-1*

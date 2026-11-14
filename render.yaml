@@ -1,0 +1,11 @@
+# Render.com free web service (Blueprint). Reads only committed files in data/ - no API calls at runtime.
+services:
+  - type: web
+    name: aralsentinel
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
