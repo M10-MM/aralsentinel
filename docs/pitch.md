@@ -1,6 +1,6 @@
 # AralSentinel — 5-minute pitch (English)
 
-Live demo: {{NETLIFY_URL}} · Code: {{GITHUB_URL}}
+Live demo: https://symphonious-twilight-34e8d7.netlify.app · Code: https://github.com/M10-MM/aralsentinel
 
 > Every number below comes from `data/field_data.json`, `data/crops.json` or the app's own output,
 > using the default sliders (water 0.4, soil 0.3, income 0.3).
@@ -26,7 +26,7 @@ Live demo: {{NETLIFY_URL}} · Code: {{GITHUB_URL}}
 > It runs in the browser, in English, Uzbek and Russian, and it works offline."
 
 ### 1:05 – 2:50 · Live demo (exact clicks)
-1. **Open {{NETLIFY_URL}}.** The Jizzakh demo field opens automatically.
+1. **Open https://symphonious-twilight-34e8d7.netlify.app.** The Jizzakh demo field opens automatically.
    > "This is a real field location in Jizzakh. Ten years of NASA data are already loaded."
 2. **Point at the risk card: 23, Low risk · proxy index.**
    > "The risk index is 23 out of 100, which is low. The biggest contributor is the vegetation trend: NDVI has slightly declined, by about 0.003 per year. Rainfall is 342 millimetres a year, root-zone soil wetness is 0.55, and the soil has pH 7.67 and 30 % clay."

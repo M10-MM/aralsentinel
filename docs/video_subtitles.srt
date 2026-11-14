@@ -26,4 +26,4 @@ in English, Uzbek and Russian.
 6
 00:00:25,000 --> 00:00:30,000
 Free, open and works offline.
-Try it at {{NETLIFY_URL_SHORT}}
+Try it at symphonious-twilight-34e8d7.netlify.app

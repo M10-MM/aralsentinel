@@ -3,7 +3,7 @@
 **Salinity-risk proxy and climate-smart crop rotations for Uzbek farmers, built on NASA open data.**
 NASA Space Apps Challenge 2026 — challenge **“Field Shift: Adapting Farms with NASA Data”**.
 
-**Live demo:** {{NETLIFY_URL}}  ·  **Code:** {{GITHUB_URL}}
+**Live demo:** https://symphonious-twilight-34e8d7.netlify.app  ·  **Code:** https://github.com/M10-MM/aralsentinel
 Docs: [pitch](docs/pitch.md) · [slides](docs/slides.md) · [video script](docs/video_script.md) · [submission texts](docs/submission.md)
 
 ## Problem

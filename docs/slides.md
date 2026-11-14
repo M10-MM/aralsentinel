@@ -7,8 +7,8 @@ Screenshots are in `docs/screenshots/`. All numbers come from the app and `data/
 ## Slide 1 — AralSentinel
 **NASA data → crop rotations for saline, water-scarce fields in Uzbekistan**
 - NASA Space Apps Challenge 2026 · "Field Shift: Adapting Farms with NASA Data"
-- Live demo: {{NETLIFY_URL}}
-- Open source: {{GITHUB_URL}}
+- Live demo: https://symphonious-twilight-34e8d7.netlify.app
+- Open source: https://github.com/M10-MM/aralsentinel
 
 🖼 Screenshot: `1_map_overview.png`
 
@@ -68,6 +68,6 @@ Screenshots are in `docs/screenshots/`. All numbers come from the app and `data/
 - Real farm boundaries and more fields: the pipeline already takes any coordinates
 - Calibrate the index with soil-salinity (EC) samples, and add SMAP soil moisture
 - **Pilot in Jizzakh** with Uzbekcosmos and extension services, with an agronomist review of the crop table
-- **Try it:** {{NETLIFY_URL}}
+- **Try it:** https://symphonious-twilight-34e8d7.netlify.app
 
 🖼 Screenshot: `6_full_page.png` (or a QR code to the live URL)
