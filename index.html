@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AralSentinel</title>
+  <link rel="icon" href="data:,">
+  <!-- Libraries are vendored locally so the demo also works offline -->
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <strong>AralSentinel</strong>
+      <span data-i18n="tagline">NASA satellite data for saline fields</span>
+    </div>
+    <select id="lang" aria-label="Language">
+      <option value="en">English</option>
+      <option value="uz">O'zbekcha</option>
+      <option value="ru">Русский</option>
+    </select>
+  </header>
+
+  <div id="sample-banner" hidden data-i18n="sample">SAMPLE DATA — not real NASA numbers.</div>
+  <div id="offline-banner" hidden data-i18n="offline">Static version: showing pre-computed NASA data.</div>
+  <div id="error-banner" role="alert" hidden></div>
+
+  <main>
+    <section id="map-wrap">
+      <div id="map"></div>
+      <p class="hint" data-i18n="hint">Click a field marker on the map.</p>
+      <div id="field-list" class="field-list"></div>
+    </section>
+
+    <section id="report" hidden>
+      <h2 id="field-name"></h2>
+
+      <div class="card risk">
+        <div>
+          <div class="label" data-i18n="risk">Salinity risk</div>
+          <div id="risk-score" class="score">–</div>
+          <div id="risk-level" class="level"></div>
+        </div>
+        <div>
+          <p id="risk-why"></p>
+          <p id="risk-inputs" class="small"></p>
+          <p class="small" data-i18n="proxy_note">Proxy index from climate, vegetation and soil data — satellites do not measure salt directly.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="label" data-i18n="trends">10-year trends (NASA)</div>
+        <div class="charts">
+          <div class="chart-box"><canvas id="c-ndvi"></canvas></div>
+          <div class="chart-box"><canvas id="c-lst"></canvas></div>
+          <div class="chart-box"><canvas id="c-soil"></canvas></div>
+          <div class="chart-box"><canvas id="c-rain"></canvas></div>
+          <div class="chart-box"><canvas id="c-tmax"></canvas></div>
+        </div>
+        <p id="no-data" class="small"></p>
+        <p id="sources" class="small"></p>
+      </div>
+
+      <div class="card">
+        <div class="label" data-i18n="priorities">Your priorities</div>
+        <label><span data-i18n="p_water">Save water</span><input type="range" id="p-water" min="0" max="1" step="0.1" value="0.4"></label>
+        <label><span data-i18n="p_soil">Protect soil</span><input type="range" id="p-soil" min="0" max="1" step="0.1" value="0.3"></label>
+        <label><span data-i18n="p_income">Income</span><input type="range" id="p-income" min="0" max="1" step="0.1" value="0.3"></label>
+      </div>
+
+      <div class="card">
+        <div class="label" data-i18n="rotations">Recommended rotations</div>
+        <div id="rot-warnings"></div>
+        <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>#</th>
+            <th data-i18n="col_sequence">Year 1 → Year 2 → Year 3</th>
+            <th data-i18n="col_fit">Fit /100</th>
+            <th data-i18n="col_water">Water</th>
+            <th data-i18n="col_salt">Salt</th>
+            <th data-i18n="col_soil">Soil</th>
+            <th data-i18n="col_income">Income $/ha*</th>
+          </tr></thead>
+          <tbody id="rotations"></tbody>
+        </table>
+        </div>
+        <p class="small" data-i18n="income_note">* Estimated gross income per hectare per year (estimated yields and prices).</p>
+        <p class="small" data-i18n="disclaimer">Options to explore, not guaranteed advice. Check with an agronomist.</p>
+      </div>
+
+      <div class="card">
+        <div class="label" data-i18n="wc_title">Water-cut simulator</div>
+        <p class="small" id="wc-rotation"></p>
+        <div class="wc-buttons" id="wc-buttons"></div>
+        <div class="wc-result" id="wc-result"></div>
+        <p class="small" data-i18n="wc_note">FAO-33: 1 − Ya/Ym = Ky × (1 − ETa/ETm). Assumes the water cut reduces crop evapotranspiration by the same share.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <details id="limitations" class="limitations">
+      <summary data-i18n="lim_title">About, limitations &amp; honesty</summary>
+      <ul>
+        <li data-i18n="lim_proxy"></li>
+        <li data-i18n="lim_prices"></li>
+        <li data-i18n="lim_resolution"></li>
+        <li data-i18n="lim_sample"></li>
+        <li data-i18n="lim_advice"></li>
+      </ul>
+    </details>
+    <span data-i18n="footer_sources">Data sources:</span>
+    <a href="https://power.larc.nasa.gov/" target="_blank" rel="noopener">NASA POWER (MERRA-2)</a> ·
+    <a href="https://lpdaac.usgs.gov/products/mod13q1v061/" target="_blank" rel="noopener">MODIS Terra MOD13Q1</a> &amp;
+    <a href="https://lpdaac.usgs.gov/products/mod11a2v061/" target="_blank" rel="noopener">MOD11A2</a>
+    (<a href="https://modis.ornl.gov/data/modis_webservice.html" target="_blank" rel="noopener">ORNL DAAC</a>) ·
+    <a href="https://soilgrids.org/" target="_blank" rel="noopener">ISRIC SoilGrids</a> ·
+    FAO-33 / FAO-56 / FAO-29
+    <span class="small" data-i18n="footer_note"> — prototype for NASA Space Apps 2026 “Field Shift”.</span>
+  </footer>
+
+  <script src="vendor/leaflet.js"></script>
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
