@@ -196,9 +196,11 @@ function render(rep) {
   // charts (empty series are skipped)
   const s = rep.series || {};
   const empty = [];
+  Object.keys(forecasts).forEach((k) => delete forecasts[k]);
   [["ndvi", "#2e7d32"], ["lst", "#e4572e"], ["soil", "#1565c0"], ["rain", "#6a4c93"], ["tmax", "#b25b00"]]
     .forEach(([k, c]) => { if (!drawChart(k, s[k], c)) empty.push(t(`ch_${k}`)); });
   document.getElementById("no-data").textContent = empty.length ? `${t("no_data")}: ${empty.join(", ")}` : "";
+  try { renderForecast(); } catch (e) { console.warn("forecast failed", e); }
 
   const src = Object.entries(rep.sources || {}).map(([k, v]) => `${k}: ${v}`).join(" · ");
   document.getElementById("sources").textContent = src ? `${t("sources")}: ${src}` : "";
@@ -243,6 +245,54 @@ document.getElementById("wc-buttons").addEventListener("click", (e) => {
   if (lastReport) renderWaterCut(lastReport);
 });
 
+// ---------------------------------------------------------------- ML trend forecast
+// Machine learning in the browser: an ordinary least-squares linear regression is fitted
+// to each NASA series (2015-2025) and extrapolated FORECAST_YEARS ahead. R² shows fit quality.
+const FORECAST_YEARS = 3;
+const forecasts = {};
+const ML_TEXT = {
+  en: { title: "Machine-learning trend forecast to", fc: "ML trend + forecast", up: "rising", down: "falling", flat: "stable",
+        note: "Linear regression model trained on 2015–2025 NASA data for this field. It shows the direction of change, not an exact value for one year. Low R² means a weak trend." },
+  ru: { title: "Прогноз тренда (машинное обучение) до", fc: "ML-тренд и прогноз", up: "растёт", down: "снижается", flat: "стабильно",
+        note: "Модель линейной регрессии обучена на данных NASA 2015–2025 для этого поля. Показывает направление изменений, а не точное значение за год. Низкий R² — слабый тренд." },
+  uz: { title: "Mashinali o'qitish trend prognozi:", fc: "ML trend va prognoz", up: "o'smoqda", down: "kamaymoqda", flat: "barqaror",
+        note: "Chiziqli regressiya modeli ushbu dala uchun 2015–2025 yillardagi NASA ma'lumotlarida o'qitilgan. U o'zgarish yo'nalishini ko'rsatadi, aniq yillik qiymatni emas. Past R² — kuchsiz trend." },
+};
+const ml = () => ML_TEXT[lang] || ML_TEXT.en;
+
+function fitTrend(pts) {
+  const n = pts.length;
+  if (n < 3) return null;
+  const mx = pts.reduce((a, p) => a + p.year, 0) / n;
+  const my = pts.reduce((a, p) => a + p.value, 0) / n;
+  let sxy = 0, sxx = 0, syy = 0;
+  pts.forEach((p) => { const dx = p.year - mx, dy = p.value - my; sxy += dx * dy; sxx += dx * dx; syy += dy * dy; });
+  if (!sxx) return null;
+  const slope = sxy / sxx, intercept = my - slope * mx;
+  return { slope, r2: syy ? (sxy * sxy) / (sxx * syy) : 0, predict: (x) => intercept + slope * x };
+}
+
+function renderForecast() {
+  let el = document.getElementById("ml-forecast");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "ml-forecast";
+    el.className = "card";
+    const anchor = document.getElementById("no-data");
+    anchor.parentNode.insertBefore(el, anchor.nextSibling);
+  }
+  const keys = Object.keys(forecasts);
+  if (!keys.length) { el.hidden = true; return; }
+  el.hidden = false;
+  const m = ml();
+  el.innerHTML = `<div class="label">${esc(m.title)} ${forecasts[keys[0]].year}</div><ul>` + keys.map((k) => {
+    const f = forecasts[k];
+    const d = f.to - f.from;
+    const dir = Math.abs(d) < Math.abs(f.from) * 0.01 ? m.flat : d > 0 ? m.up : m.down;
+    return `<li><b>${esc(t(`ch_${k}`))}</b>: ${f.from.toFixed(f.dec)} → ${f.to.toFixed(f.dec)} (${esc(dir)}, R² ${f.r2.toFixed(2)})</li>`;
+  }).join("") + `</ul><p class="small">${esc(m.note)}</p>`;
+}
+
 // ---------------------------------------------------------------- charts
 // Returns false (and hides the chart) when the series is empty.
 function drawChart(key, series, color) {
@@ -252,12 +302,20 @@ function drawChart(key, series, color) {
   const pts = (series || []).filter((p) => p && p.value !== null && p.value !== undefined);
   ctx.parentElement.hidden = pts.length === 0;
   if (!pts.length || typeof Chart === "undefined") return pts.length > 0;
+  // ML trend forecast: regression fitted in the browser, extended FORECAST_YEARS ahead
+  const fit = fitTrend(pts);
+  const lastYear = pts[pts.length - 1].year;
+  const future = fit ? Array.from({ length: FORECAST_YEARS }, (_, i) => lastYear + i + 1) : [];
+  const labels = pts.map((p) => p.year).concat(future);
+  const datasets = [{ label: t(`ch_${key}`), data: pts.map((p) => p.value).concat(future.map(() => null)), borderColor: color, tension: 0.3, pointRadius: 2 }];
+  if (fit) {
+    const dec = Math.abs(fit.predict(lastYear)) < 2 ? 3 : 1;
+    datasets.push({ label: ml().fc, data: labels.map((y) => +fit.predict(y).toFixed(dec)), borderColor: color, borderDash: [6, 4], borderWidth: 1.5, pointRadius: 0, tension: 0 });
+    forecasts[key] = { from: fit.predict(lastYear), to: fit.predict(lastYear + FORECAST_YEARS), year: lastYear + FORECAST_YEARS, r2: fit.r2, dec };
+  }
   charts[key] = new Chart(ctx, {
     type: "line",
-    data: {
-      labels: pts.map((p) => p.year),
-      datasets: [{ label: t(`ch_${key}`), data: pts.map((p) => p.value), borderColor: color, tension: 0.3, pointRadius: 2 }],
-    },
+    data: { labels, datasets },
     options: { responsive: true, animation: false, plugins: { legend: { labels: { boxWidth: 10 } } }, scales: { x: { ticks: { maxTicksLimit: 6 } } } },
   });
   return true;
