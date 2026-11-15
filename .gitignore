@@ -13,3 +13,6 @@ data/cache/*
 !data/cache/raw/
 data/cache/raw/*
 !data/cache/raw/*jizzakh-1*
+
+# local working copies
+*.backup
